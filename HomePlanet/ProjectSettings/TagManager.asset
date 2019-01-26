@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BubbleBack
+    uniqueID: 3046542133
+    locked: 0
+  - name: BubbleFront
+    uniqueID: 3815262083
+    locked: 0
