@@ -5,7 +5,6 @@ using UnityEngine;
 public class LandSensor : MonoBehaviour
 {
     private Collider2D cd;
-    public GameObject bubble;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,14 @@ public class LandSensor : MonoBehaviour
             if(cd.IsTouching(check)){
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up * -1);
                 if(hit.collider == check){
-                    bubble.SetActive(false);
+                    if (check.gameObject.GetComponent<PassengerLifecycle>().IsWaiting())
+                    {
+                        check.gameObject.GetComponent<PassengerLifecycle>().updatePassengerStatusPickup();
+                    }
+                    else if (check.gameObject.GetComponent<PassengerLifecycle>().IsArriving())
+                    {
+
+                    }
                 }
             }
         }
