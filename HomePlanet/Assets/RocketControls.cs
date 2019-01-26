@@ -19,9 +19,11 @@ public class RocketControls : MonoBehaviour {
             rb.AddForce(this.transform.up * thrust, ForceMode2D.Force);
         }
         if(Input.GetAxis("Horizontal") > .4){
+            //this.transform.Rotate(Vector3.right * Time.deltaTime * 10);
             rb.AddTorque(-torque);
         }
         if(Input.GetAxis("Horizontal") < -.4){
+            //this.transform.Rotate(Vector3.left * Time.deltaTime * 10);
             rb.AddTorque(torque);
         }
 	}
