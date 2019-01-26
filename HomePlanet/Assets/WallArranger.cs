@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WallArranger : MonoBehaviour {
 
+  float wallZ = 0f;
+
 	public Transform left;
 	public Transform right;
 	public Transform top;
@@ -12,9 +14,9 @@ public class WallArranger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Camera camera = GetComponent<Camera>();
-		left.position = camera.ViewportToWorldPoint(new Vector3(0, 0.5f, camera.nearClipPlane));
-		right.position = camera.ViewportToWorldPoint(new Vector3(1, 0.5f, camera.nearClipPlane));
-		bottom.position = camera.ViewportToWorldPoint(new Vector3(0.5f, 0, camera.nearClipPlane));
-		top.position = camera.ViewportToWorldPoint(new Vector3(0.5f, 1, camera.nearClipPlane));
+		left.position = camera.ViewportToWorldPoint(new Vector3(0, 0.5f, wallZ));
+		right.position = camera.ViewportToWorldPoint(new Vector3(1, 0.5f, wallZ));
+		bottom.position = camera.ViewportToWorldPoint(new Vector3(0.5f, 0, wallZ));
+		top.position = camera.ViewportToWorldPoint(new Vector3(0.5f, 1, wallZ));
 	}
 }
