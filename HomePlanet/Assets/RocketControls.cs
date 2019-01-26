@@ -6,6 +6,7 @@ public class RocketControls : MonoBehaviour {
 
     private Rigidbody2D rb;
     public float thrust = 5;
+    public float torque = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,12 @@ public class RocketControls : MonoBehaviour {
 	void Update () {
         if (Input.GetButton("Fire1")) {
             rb.AddForce(this.transform.up * thrust, ForceMode2D.Force);
+        }
+        if(Input.GetAxis("Horizontal") > .4){
+            rb.AddTorque(-torque);
+        }
+        if(Input.GetAxis("Horizontal") < -.4){
+            rb.AddTorque(torque);
         }
 	}
 }
