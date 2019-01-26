@@ -12,6 +12,7 @@ public class PassengerLifecycle : MonoBehaviour
     }
     private GameGenerator master;
     private PassengerState state;
+    public GameObject bubble;
 
     private GameObject homeworld;
 
@@ -24,12 +25,12 @@ public class PassengerLifecycle : MonoBehaviour
     void Update()
     {
         if (state == PassengerState.Waiting) {
-            transform.GetChild(1).gameObject.SetActive(true);
+            bubble.SetActive(true);
         }
 
         if (state == PassengerState.InFlight) {
-            transform.GetChild(1).gameObject.SetActive(false);
-            homeworld = master.pickAndReturnNextPlanet();
+           // bubble.SetActive(false);
+           // homeworld = master.pickAndReturnNextPlanet();
           // Update some piece of UI to show their description of home
           // Set their target planet
           // Check if we have landed on their home planet, then switch to
@@ -44,12 +45,15 @@ public class PassengerLifecycle : MonoBehaviour
 
     public void updatePassengerStatusPickup(){
         state = PassengerState.InFlight;
+        bubble.SetActive(false);
+        homeworld = master.pickAndReturnNextPlanet();
         Debug.Log("TAKE ME TO: " + homeworld.name);
     }
 
     public void updatePassengerStatusDrop()
     {
         state = PassengerState.Arriving;
+        Debug.Log("I am at: " + homeworld.name);
     }
 
     public void updatePassengerStatusHelp(){

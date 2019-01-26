@@ -35,7 +35,7 @@ public class GameGenerator : MonoBehaviour
     }
 
     public GameObject pickAndReturnNextPlanet() {
-        int newPlanet = Random.Range(0, planets.Length);
+       int newPlanet = Random.Range(0, planets.Length);
         while(picked.Contains(newPlanet)) {
             newPlanet = Random.Range(0, planets.Length);
         }
