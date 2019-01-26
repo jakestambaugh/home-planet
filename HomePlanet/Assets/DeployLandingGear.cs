@@ -8,7 +8,10 @@ public class DeployLandingGear : MonoBehaviour
     GameObject[] gameObjects;
     bool deployed = false;
     float animTime = 0.0f;
-    float animRate = 0.015f;
+    float animRate = 0.02f;
+
+    bool nearPlanet = false;
+    int nearcount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,16 +31,28 @@ public class DeployLandingGear : MonoBehaviour
     {
         anim.Play("Armature|LandingGearDeploy", 0, animTime);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        nearPlanet = false;
+
+        foreach(GameObject planet in gameObjects)
         {
-            if(deployed == false)
+            // Find distance from rocket to planet surface
+            float distToPlanet = Vector3.Distance(transform.position, planet.transform.position);
+            float planetRadius = planet.GetComponent<Renderer>().bounds.extents.magnitude;
+            float distToPlanetSurface = distToPlanet-planetRadius;
+
+            if(distToPlanetSurface < 1.0)
             {
-                deployed = true;
+                nearPlanet = true;
             }
-            else
-            {
-                deployed = false;
-            }
+        }
+
+        if(nearPlanet == true)
+        {
+            deployed = true;
+        }
+        else
+        {
+            deployed = false;
         }
 
         if(deployed == true)
