@@ -37,10 +37,12 @@ public class DeployLandingGear : MonoBehaviour
         {
             // Find distance from rocket to planet surface
             float distToPlanet = Vector3.Distance(transform.position, planet.transform.position);
-            float planetRadius = planet.GetComponent<Renderer>().bounds.extents.magnitude;
+            float planetRadius = planet.GetComponent<CircleCollider2D>().bounds.size.x/2;
             float distToPlanetSurface = distToPlanet-planetRadius;
+            
+            //Debug.Log("ypos: " + transform.position.y + ", distToPlanet: " + distToPlanet + ", planetRadius: " + planetRadius + ", distToPlanetSurface: " + distToPlanetSurface);
 
-            if(distToPlanetSurface < 1.0)
+            if(distToPlanetSurface < 1.5)
             {
                 nearPlanet = true;
             }
