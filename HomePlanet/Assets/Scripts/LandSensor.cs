@@ -22,14 +22,16 @@ public class LandSensor : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up * -1);
                 if(hit.collider != null && hit.collider == check){
                     PassengerLifecycle pass = check.gameObject.GetComponent<PassengerLifecycle>();
-                    if (pass.IsWaiting())
+                    if (!seat.HasPassenger() && pass.IsWaiting())
                     {
                         pass.updatePassengerStatusPickup();
+                        seat.LoadPassenger(pass);
                     }
                     //if has passenger and planet is the target, switch to arriving
                     else if(seat.HasPassenger() && seat.GetPassengerHomeworld() == check)
                     {
                         pass.updatePassengerStatusDrop();
+                        seat.UnloadPassenger();
                     }
                 }
             }
