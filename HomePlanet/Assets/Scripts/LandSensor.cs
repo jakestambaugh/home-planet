@@ -5,10 +5,12 @@ using UnityEngine;
 public class LandSensor : MonoBehaviour
 {
     private Collider2D cd;
+    private PassengerSeat seat;
     // Start is called before the first frame update
     void Start()
     {
         cd = GetComponent<Collider2D>();
+        seat = GetComponent<PassengerSeat>();
     }
 
     // Update is called once per frame
@@ -18,14 +20,16 @@ public class LandSensor : MonoBehaviour
         foreach(Collider2D check in nearby){
             if(cd.IsTouching(check)){
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up * -1);
-                if(hit.collider == check){
-                    if (check.gameObject.GetComponent<PassengerLifecycle>().IsWaiting())
+                if(hit.collider != null && hit.collider == check){
+                    PassengerLifecycle pass = check.gameObject.GetComponent<PassengerLifecycle>();
+                    if (pass.IsWaiting())
                     {
-                        check.gameObject.GetComponent<PassengerLifecycle>().updatePassengerStatusPickup();
+                        pass.updatePassengerStatusPickup();
                     }
-                    else if (check.gameObject.GetComponent<PassengerLifecycle>().IsArriving())
+                    //if has passenger and planet is the target, switch to arriving
+                    else if(seat.HasPassenger() && seat.GetPassengerHomeworld() == check)
                     {
-
+                        pass.updatePassengerStatusDrop();
                     }
                 }
             }

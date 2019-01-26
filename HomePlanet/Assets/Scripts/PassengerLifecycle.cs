@@ -10,11 +10,14 @@ public class PassengerLifecycle : MonoBehaviour
         Arriving,
         Off
     }
-
+    private GameGenerator master;
     private PassengerState state;
+
+    private GameObject homeworld;
 
     void Start() {
         state = PassengerState.Off;
+        master = FindObjectOfType<GameGenerator>();
     }
 
     // Update is called once per frame
@@ -26,20 +29,27 @@ public class PassengerLifecycle : MonoBehaviour
 
         if (state == PassengerState.InFlight) {
             transform.GetChild(1).gameObject.SetActive(false);
+            homeworld = master.pickAndReturnNextPlanet();
           // Update some piece of UI to show their description of home
           // Set their target planet
           // Check if we have landed on their home planet, then switch to
           // "Arriving"
         }
         if (state == PassengerState.Arriving) {
-            //message about arrival
-            GameGenerator master = GameObject.FindObjectOfType<GameGenerator>();
+            //message about arriving
             master.pickNextPlanet();
+            state = PassengerState.Off;
         }
     }
 
     public void updatePassengerStatusPickup(){
         state = PassengerState.InFlight;
+        Debug.Log("TAKE ME TO: " + homeworld.name);
+    }
+
+    public void updatePassengerStatusDrop()
+    {
+        state = PassengerState.Arriving;
     }
 
     public void updatePassengerStatusHelp(){
@@ -58,5 +68,13 @@ public class PassengerLifecycle : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public string GetHomeworldClue(){
+        return null;
+    }
+    public GameObject GetHomeworld()
+    {
+        return homeworld;
     }
 }

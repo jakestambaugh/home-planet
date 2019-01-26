@@ -25,4 +25,11 @@ public class PassengerSeat : MonoBehaviour
         passenger = null;
         return p;
     }
+
+    public bool HasPassenger(){
+        if(passenger == null){
+            return false;
+        }
+        return true;
+    }
 }

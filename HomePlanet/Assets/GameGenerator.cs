@@ -30,6 +30,16 @@ public class GameGenerator : MonoBehaviour
             newPlanet = Random.Range(0, planets.Length);
         }
         picked.Add(newPlanet);
+        // Sets the passenger on the new planet
         planets[newPlanet].gameObject.GetComponent<PassengerLifecycle>().updatePassengerStatusHelp();
+    }
+
+    public GameObject pickAndReturnNextPlanet() {
+        int newPlanet = Random.Range(0, planets.Length);
+        while(picked.Contains(newPlanet)) {
+            newPlanet = Random.Range(0, planets.Length);
+        }
+        picked.Add(newPlanet);
+        return planets[newPlanet];
     }
 }
