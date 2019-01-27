@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-public class timer : MonoBehaviour
+public class Timer : MonoBehaviour
 {
-    public Text timerText;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI scoreText;
     private float startTime;
     private float score;
     // Start is called before the first frame update
@@ -30,7 +31,8 @@ public class timer : MonoBehaviour
         }
         if ((2 - (int)t / 60) > 0 && (58 - (t % 60) + 1) > 0 && !seconds.Equals("010"))
         {
-            timerText.text = "Time: " + minute + ":" + seconds + "\n" + "Score: "+score;
+            timerText.text = "Time: " + minute + ":" + seconds;
+            scoreText.text = "Score: " + score;
         }
     }
 
