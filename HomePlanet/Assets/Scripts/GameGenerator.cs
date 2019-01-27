@@ -6,6 +6,7 @@ using TMPro;
 public class GameGenerator : MonoBehaviour
 {
     public TextMeshProUGUI clueText;
+    public Camera mini;
 
     Planet[] planets;
     Queue<Planet> unpicked;
@@ -13,6 +14,7 @@ public class GameGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mini.rect = new Rect(0f, 0f, 0.3f, 0.3f);
         unpicked = new Queue<Planet>();
         picked = new List<Planet>();
         planets = GameObject.FindObjectsOfType<Planet>();
