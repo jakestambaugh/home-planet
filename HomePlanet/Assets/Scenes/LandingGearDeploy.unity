@@ -853,11 +853,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3313842595301484328, guid: c7886949773d44827897a58d1a618d08,
         type: 3}
-<<<<<<< HEAD
-      propertyPath: mini
-      value: 
-      objectReference: {fileID: 1797897249}
-=======
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
@@ -866,7 +861,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
->>>>>>> Add minimap highlights
     - target: {fileID: 567244472467326060, guid: c7886949773d44827897a58d1a618d08,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -902,19 +896,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 6433159123201799203, guid: c7886949773d44827897a58d1a618d08,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-=======
     - target: {fileID: 3313842595301484328, guid: c7886949773d44827897a58d1a618d08,
         type: 3}
       propertyPath: mini
       value: 
       objectReference: {fileID: 1797897249}
->>>>>>> Add minimap highlights
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7886949773d44827897a58d1a618d08, type: 3}
 --- !u!1 &811721454 stripped
