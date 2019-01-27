@@ -11,6 +11,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocky
       objectReference: {fileID: 0}
+    - target: {fileID: 23489876264333144, guid: fd7286de9d4b34bebaaf43c0df3d26db,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4906727839095128, guid: fd7286de9d4b34bebaaf43c0df3d26db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -55,16 +60,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 23489876264333144, guid: fd7286de9d4b34bebaaf43c0df3d26db,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8430390655717435687, guid: fd7286de9d4b34bebaaf43c0df3d26db,
         type: 3}
       propertyPath: helpBubble
       value: 
       objectReference: {fileID: 3889959661605531394}
+    - target: {fileID: 9062980251207266828, guid: fd7286de9d4b34bebaaf43c0df3d26db,
+        type: 3}
+      propertyPath: cluesFile
+      value: 
+      objectReference: {fileID: 11400000, guid: 764e279f2d4394498a0d098aee7fb0ff,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd7286de9d4b34bebaaf43c0df3d26db, type: 3}
 --- !u!4 &3517050732119935247 stripped
