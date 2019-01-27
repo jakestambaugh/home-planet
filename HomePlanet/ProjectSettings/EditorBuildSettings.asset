@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LogoMagic.unity
+    guid: 03ace58daef7b534f9fab7bfe4d10994
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 477dae02ccb76934e9aa1efba3f5512f
   - enabled: 1
