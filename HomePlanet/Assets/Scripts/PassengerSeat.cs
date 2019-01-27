@@ -58,6 +58,7 @@ public class PassengerSeat : MonoBehaviour
 
     public void LoadPassenger(Passenger p) {
         if (passenger == null || passenger.GetHomeworld() == null) {
+            gameMaster.ShowClue(p.GetHomeworldClue());
             passenger = p;
         }
     }

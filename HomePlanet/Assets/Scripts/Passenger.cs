@@ -7,13 +7,15 @@ using UnityEngine;
 public class Passenger : System.Object {
     [SerializeField]
     private Planet homeworld;
+    private string clue;
 
     public Passenger(Planet homeworld) {
         this.homeworld = homeworld;
+        clue = homeworld.GetClue();
     }
 
     public string GetHomeworldClue(){
-        return homeworld.GetClue();
+        return clue;
     }
     public Planet GetHomeworld()
     {

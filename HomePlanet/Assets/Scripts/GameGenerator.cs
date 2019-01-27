@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameGenerator : MonoBehaviour
 {
+    public TextMeshProUGUI clueText;
+
     Planet[] planets;
     Queue<Planet> unpicked;
     List<Planet> picked;
@@ -66,4 +69,8 @@ public class GameGenerator : MonoBehaviour
 			a[rnd] = temp;
 		}
 	}
+
+    public void ShowClue(string clue) {
+        clueText.SetText(clue);
+    }
 }
