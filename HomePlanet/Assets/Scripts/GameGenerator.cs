@@ -8,12 +8,15 @@ public class GameGenerator : MonoBehaviour
     public TextMeshProUGUI clueText;
     public Camera mini;
 
+    private Timer timer;
+
     Planet[] planets;
     Queue<Planet> unpicked;
     List<Planet> picked;
     // Start is called before the first frame update
     void Start()
     {
+        timer = GetComponent<Timer>();
         mini.rect = new Rect(0f, 0f, 0.3f, 0.3f);
         unpicked = new Queue<Planet>();
         picked = new List<Planet>();
@@ -28,6 +31,10 @@ public class GameGenerator : MonoBehaviour
     }
 
     public void Update() {
+    }
+
+    public void UpdateScore() {
+        timer.UpdateScore();
     }
 
     public void SetupNewPassenger(){

@@ -52,6 +52,7 @@ public class PassengerSeat : MonoBehaviour
         if(homePlanet == planet) {
             UnloadPassenger();
             // Ask the game manager to create another passenger
+            gameMaster.UpdateScore();
             gameMaster.SetupNewPassenger();
         }
     }
