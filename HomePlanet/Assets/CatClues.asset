@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2c6c93927084a1ca2bdbcdf4e76e51, type: 3}
   m_Name: CatClues
   m_EditorClassIdentifier: 
-  clues: []
+  clues:
+  - Home is where my cat is!
+  - I have the cutest kitty planet as my home.
+  - Watch the ears when you land on my home.
+  - We hate dogs where I come from. Team Cat!
+  - Everyone is team cat where I come from!

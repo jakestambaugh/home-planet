@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2c6c93927084a1ca2bdbcdf4e76e51, type: 3}
   m_Name: Artic Clues
   m_EditorClassIdentifier: 
-  clues: []
+  clues:
+  - I always wear a large coat at home.
+  - I love ice skating at home!
+  - 'My home is very cold. '
+  - 'My home is blue and white. '
+  - I hate heat, my home is full of ice.

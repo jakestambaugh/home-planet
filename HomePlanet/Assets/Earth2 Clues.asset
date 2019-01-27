@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2c6c93927084a1ca2bdbcdf4e76e51, type: 3}
   m_Name: Earth2 Clues
   m_EditorClassIdentifier: 
-  clues: []
+  clues:
+  - My planet is darker blue and green.
+  - My planet and your planet are the same.
+  - I enjoy swiming in the ocean on my planet.
+  - 'My home is in North America. '
+  - I like to watch TV at home on my planet.

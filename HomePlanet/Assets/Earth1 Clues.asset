@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2c6c93927084a1ca2bdbcdf4e76e51, type: 3}
   m_Name: Earth1 Clues
   m_EditorClassIdentifier: 
-  clues: []
+  clues:
+  - My home planet has mountains and oceans!
+  - My home planet is light blue and green.
+  - Home is where I can watch TV with my family.
+  - 'I think we share a home planet. '
+  - The lighter blue water planet is my home!

@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2c6c93927084a1ca2bdbcdf4e76e51, type: 3}
   m_Name: Mars Clues
   m_EditorClassIdentifier: 
-  clues: []
+  clues:
+  - My planet is red.
+  - My home is the fourth planet from the sun.
+  - My home has no oxygen.
+  - My home isn't Mercury, but the other M planet.
+  - Sometimes you can see my red planet from Earth!
