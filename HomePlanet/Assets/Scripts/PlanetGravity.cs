@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetGravity : MonoBehaviour
 {
     Component[] pe2d;
-    public float magnitude = -6.0f;
+    public float magnitude = -1.0f;
 
     // Start is called before the first frame update
     void Start()

@@ -9,6 +9,8 @@ public class RocketControls : MonoBehaviour {
     public float torque = 0.5f;
 
     public RocketJuice rj;
+    public RocketJuice lt;
+    public RocketJuice rt;
 
 	// Use this for initialization
 	void Start () {
@@ -23,10 +25,12 @@ public class RocketControls : MonoBehaviour {
         }
         if(Input.GetAxis("Horizontal") > .4){
             //this.transform.Rotate(Vector3.right * Time.deltaTime * 10);
+            lt.IncreaseRocketAnimation();
             rb.AddTorque(-torque, ForceMode2D.Force);
         }
         if(Input.GetAxis("Horizontal") < -.4){
             //this.transform.Rotate(Vector3.left * Time.deltaTime * 10);
+            rt.IncreaseRocketAnimation();
             rb.AddTorque(torque, ForceMode2D.Force);
         }
 	}

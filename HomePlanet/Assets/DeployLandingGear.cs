@@ -8,7 +8,7 @@ public class DeployLandingGear : MonoBehaviour
     GameObject[] gameObjects;
     bool deployed = false;
     float animTime = 0.0f;
-    float animRate = 0.02f;
+    float animRate = 0.04f;
     bool nearPlanet = false;
 
     // Start is called before the first frame update
