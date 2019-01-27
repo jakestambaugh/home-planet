@@ -7,6 +7,7 @@ public class timer : MonoBehaviour
 {
     public Text timerText;
     private float startTime;
+    private float score;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +30,12 @@ public class timer : MonoBehaviour
         }
         if ((2 - (int)t / 60) > 0 && (58 - (t % 60) + 1) > 0 && !seconds.Equals("010"))
         {
-            timerText.text = "Time: " + minute + ":" + seconds;
+            timerText.text = "Time: " + minute + ":" + seconds + "\n" + "Score: "+score;
         }
+    }
+
+    public void updateScore(){
+        score = score + 1;
     }
 }
 
