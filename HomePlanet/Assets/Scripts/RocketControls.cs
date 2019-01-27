@@ -8,6 +8,8 @@ public class RocketControls : MonoBehaviour {
     public float thrust = 5;
     public float torque = 0.5f;
 
+    public RocketJuice rj;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -16,6 +18,7 @@ public class RocketControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetButton("Fire2") || Input.GetButton("Fire1")) {
+            rj.IncreaseRocketAnimation();
             rb.AddForce(this.transform.up * thrust, ForceMode2D.Force);
         }
         if(Input.GetAxis("Horizontal") > .4){
