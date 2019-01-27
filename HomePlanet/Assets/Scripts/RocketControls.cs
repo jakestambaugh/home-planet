@@ -12,9 +12,14 @@ public class RocketControls : MonoBehaviour {
     public RocketJuice lt;
     public RocketJuice rt;
 
+    public DeployLandingGear dlg;
+
+    public GameObject splosion;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        dlg = GetComponentInChildren<DeployLandingGear>();
 	}
 	
 	// Update is called once per frame
@@ -34,4 +39,13 @@ public class RocketControls : MonoBehaviour {
             rb.AddTorque(torque, ForceMode2D.Force);
         }
 	}
+    
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(dlg.nearPlanet != true)
+        {
+            GameObject explosion = (GameObject) Instantiate(splosion, transform.position, transform.rotation);
+            transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        }
+    }
 }
