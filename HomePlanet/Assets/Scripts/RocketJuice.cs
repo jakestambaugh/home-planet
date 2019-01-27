@@ -5,7 +5,7 @@ using UnityEngine;
 public class RocketJuice : MonoBehaviour
 {
     ParticleSystem[] particles;
-    private const int DECAY_FACTOR = 1;
+    private const int DECAY_FACTOR = 12;
     private const int GROWTH_FACTOR = DECAY_FACTOR * 2;
 
     private int tester = 0;
