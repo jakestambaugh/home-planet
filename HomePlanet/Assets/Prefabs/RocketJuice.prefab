@@ -14257,7 +14257,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -14310,7 +14310,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 50
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -14364,7 +14364,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0, g: 0.9419036, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14809,7 +14809,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 90, y: 0, z: 0}
-    m_Scale: {x: 3.2, y: 0, z: 1}
+    m_Scale: {x: 2, y: 0, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -15445,10 +15445,10 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.375534, g: 0.4790683, b: 0.9150943, a: 1}
-        key1: {r: 0.7137255, g: 0.8235295, b: 0.85098046, a: 0.8392157}
-        key2: {r: 0.83956003, g: 0.8679245, b: 0.20879315, a: 0.6784314}
-        key3: {r: 0, g: 0, b: 0, a: 0.6627451}
+        key0: {r: 0.25467247, g: 0.89627415, b: 0.9150943, a: 1}
+        key1: {r: 0.41251338, g: 0.76174784, b: 0.8490566, a: 0.8392157}
+        key2: {r: 1, g: 1, b: 1, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -15463,7 +15463,7 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 22937
-        atime2: 47417
+        atime2: 47224
         atime3: 65535
         atime4: 0
         atime5: 0
@@ -16710,7 +16710,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 1
+    enabled: 0
     strength:
       serializedVersion: 2
       minMaxState: 0
