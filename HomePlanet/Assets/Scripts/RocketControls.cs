@@ -12,10 +12,13 @@ public class RocketControls : MonoBehaviour {
     public RocketJuice rj;
     public RocketJuice lt;
     public RocketJuice rt;
+    public bool exploding = false;
 
     public DeployLandingGear dlg;
 
     public GameObject splosion;
+
+    float maxSpeed = 5.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -48,13 +51,31 @@ public class RocketControls : MonoBehaviour {
             rb.AddTorque(torque, ForceMode2D.Force);
         }
 	}
+
+    void FixedUpdate()
+    {
+        if(rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+    }
     
     void OnCollisionEnter2D(Collision2D col)
     {
         if(dlg.nearPlanet != true)
         {
             GameObject explosion = (GameObject) Instantiate(splosion, transform.position, transform.rotation);
-            transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            exploding = true;
         }
+    }
+
+    public void MoveToCenter()
+    {
+        transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+    }
+
+    public void ArrestMotion()
+    {
+        rb.velocity = Vector2.zero;
     }
 }

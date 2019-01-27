@@ -44,7 +44,7 @@ public class DeployLandingGear : MonoBehaviour
             
             //Debug.Log("ypos: " + transform.position.y + ", distToPlanet: " + distToPlanet + ", planetRadius: " + planetRadius + ", distToPlanetSurface: " + distToPlanetSurface);
 
-            if(distToPlanetSurface < 1.5 && (dotProduct > (distToPlanet-0.4f) && dotProduct < (distToPlanet+0.4f)))
+            if(distToPlanetSurface < 1.5 && (dotProduct > (distToPlanet-1.0f) && dotProduct < (distToPlanet+1.0f)))
             {
                 nearPlanet = true;
             }
