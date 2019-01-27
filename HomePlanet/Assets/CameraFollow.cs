@@ -49,7 +49,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 camPos;
         if(explosionDelayEnabled == true)
         {
-            camPos = new Vector3 (explosionPos.x, explosionPos.y, -7.0f);
+            camPos = new Vector3 (explosionPos.x, explosionPos.y, -700.0f);
             delayTime += Time.deltaTime;
             rc.ArrestMotion();
 
@@ -61,11 +61,10 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            camPos = new Vector3 (playerPos.x, playerPos.y, -7.0f);
+            camPos = new Vector3 (playerPos.x, playerPos.y, -700.0f);
         }
 
         float size = Mathf.Lerp(cam.orthographicSize, project(vel), Time.deltaTime * lerpSpeed);
-        Vector3 camPos = new Vector3 (playerPos.x, playerPos.y, -700.0f);
 
         cam.orthographicSize = size+0.02f;
         transform.position = camPos;
