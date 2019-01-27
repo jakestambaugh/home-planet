@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
+    public PlanetClues cluesFile;
+    public string[] possibleClues;
+
     // Start is called before the first frame update
     void Start()
     {
+        possibleClues = cluesFile.clues;
         gameObject.tag = "Planet";
     }
 
@@ -37,6 +41,7 @@ public class Planet : MonoBehaviour
     }
 
     public string GetClue() {
+        /*
         string[] possibleClues = {
             "has a " + DescribeColor() + " color!",
             "is very " + DescribeColor() + ".",
@@ -46,5 +51,8 @@ public class Planet : MonoBehaviour
         int i = Random.Range(0, possibleClues.Length);
 
         return "" + Intro() + possibleClues[i];
+        */
+        int i = Random.Range(0, possibleClues.Length);
+        return possibleClues[i];
     }
 }
