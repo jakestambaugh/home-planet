@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 477dae02ccb76934e9aa1efba3f5512f
   - enabled: 1
+    path: Assets/Scenes/LandingGearDeploy.unity
+    guid: 932b782c28e99e7459b0cca247a21e31
+  - enabled: 0
+    path: Assets/Scenes/TaxiTest.unity
+    guid: 8b5804370164643deb7799c61bf5139f
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: db1291021fd824f7cb65ae4021d24a41
   m_configObjects: {}
