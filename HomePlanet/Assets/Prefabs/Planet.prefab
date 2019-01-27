@@ -65,7 +65,7 @@ PointEffector2D:
   m_DistanceScale: 1
   m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
+  m_ForceMode: 2
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1 &1894385466075630
@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 58438669526325956}
   - component: {fileID: 8430390655717435687}
   - component: {fileID: 9062980251207266828}
+  - component: {fileID: 1996049343933429715}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -193,6 +194,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d974540d77a406cb2e30f1844fd883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cluesFile: {fileID: 0}
+  possibleClues: []
+--- !u!114 &1996049343933429715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894385466075630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d049e31c8274bcf4e95c30807df6cc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnitude: -8
 --- !u!1001 &4728199017810082119
 PrefabInstance:
   m_ObjectHideFlags: 0
