@@ -6,6 +6,7 @@ using UnityEngine;
 public class PassengerSeat : MonoBehaviour
 {
     public GameGenerator gameMaster;
+    [SerializeField]
     private Passenger passenger;
 
     private LandSensor sensor;

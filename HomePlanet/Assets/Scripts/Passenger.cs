@@ -1,8 +1,11 @@
 
+using UnityEngine;
 /**
  * Pure data class to represent a passenger
  */
-public class Passenger {
+[System.Serializable]
+public class Passenger : System.Object {
+    [SerializeField]
     private Planet homeworld;
 
     public Passenger(Planet homeworld) {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PassengerPickupPoint : MonoBehaviour
 {
     public GameObject helpBubble;
+    [SerializeField]
     private Passenger passenger;
     // Start is called before the first frame update
 
