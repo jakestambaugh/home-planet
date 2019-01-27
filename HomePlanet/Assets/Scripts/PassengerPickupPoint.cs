@@ -6,7 +6,7 @@ public class PassengerPickupPoint : MonoBehaviour
 {
     public GameObject helpBubble;
     [SerializeField]
-    private Passenger passenger;
+    private Passenger passenger = null;
     // Start is called before the first frame update
 
     public bool HasPassenger() {
@@ -31,11 +31,11 @@ public class PassengerPickupPoint : MonoBehaviour
      * generated
      */
     public void SetPassenger(Planet destination) {
-        Debug.Log("Setting the passenger on planet");
+        // Debug.Log("Setting the passenger on planet");
         SetPassenger(new Passenger(destination));
     }
 
-    public void SetPassenger(Passenger passenger) {
+    private void SetPassenger(Passenger passenger) {
         Debug.Log("Setting the passenger with target: " + passenger.GetHomeworld());
         helpBubble.SetActive(true);
         this.passenger = passenger;

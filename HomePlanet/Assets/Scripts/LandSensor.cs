@@ -55,14 +55,14 @@ public class LandSensor : MonoBehaviour
 
        if (!cd.IsTouching(hit.collider)) {
            // Hovering over, but not touching
-           Debug.Log("Near a " + hit.collider.name);
+           // Debug.Log("Near a " + hit.collider.name);
            return null;
        }
 
        GameObject objectUnderneathShip = hit.collider.gameObject;
        Planet planet = objectUnderneathShip.GetComponent<Planet>();
        // Returns null if we are hovering over something other than a planet, or the Planet
-       Debug.Log("Found a " + planet);
+       // Debug.Log("Found a " + planet + " on the " + objectUnderneathShip);
        return planet;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4580747389068578}
   - component: {fileID: 58436404850789254}
   - component: {fileID: 250028569459985184}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Atmosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,6 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpBubble: {fileID: 370865370502414165}
+  passenger:
+    homeworld: {fileID: 0}
 --- !u!114 &9062980251207266828
 MonoBehaviour:
   m_ObjectHideFlags: 0

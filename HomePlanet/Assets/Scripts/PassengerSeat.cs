@@ -7,12 +7,13 @@ public class PassengerSeat : MonoBehaviour
 {
     public GameGenerator gameMaster;
     [SerializeField]
-    private Passenger passenger;
+    private Passenger passenger = null;
 
     private LandSensor sensor;
 
     void Start() {
         sensor = GetComponent<LandSensor>();
+        passenger = null;
     }
 
     // Check every frame if we are over a planet that we could get a pickup from
@@ -20,7 +21,9 @@ public class PassengerSeat : MonoBehaviour
         Planet planetBelow = sensor.GetPlanetBelow();
         if (planetBelow != null) {
             // If we don't have a passenger on-board now, try to pick one up
+            Debug.Log("Passenger " + passenger + ". Planet " + planetBelow);
             if (!HasPassenger()) {
+                Debug.Log("Pickup!");
                 PickupFromPlanet(planetBelow);
             }
             else {
@@ -37,7 +40,9 @@ public class PassengerSeat : MonoBehaviour
         }
     }
     public void PickupFromPlanet(PassengerPickupPoint pickup) {
+      Debug.Log("Pickup has passenger? " + pickup);
       if (pickup.HasPassenger()) {
+        Debug.Log("Pickup has passenger " + pickup); 
         LoadPassenger(pickup.GetNextPassenger());
       }
     }
@@ -52,7 +57,7 @@ public class PassengerSeat : MonoBehaviour
     }
 
     public void LoadPassenger(Passenger p) {
-        if (passenger == null) {
+        if (passenger == null || passenger.GetHomeworld() == null) {
             passenger = p;
         }
     }
@@ -72,6 +77,6 @@ public class PassengerSeat : MonoBehaviour
     }
 
     public bool HasPassenger(){
-        return passenger != null;
+        return passenger != null && passenger.GetHomeworld() != null;
     }
 }
