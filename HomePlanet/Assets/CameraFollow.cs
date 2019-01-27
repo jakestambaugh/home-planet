@@ -29,7 +29,7 @@ public class CameraFollow : MonoBehaviour
         float vel = Mathf.Clamp(rocketbody.velocity.magnitude, 0f, 100f);
         Vector3 playerPos = player.transform.position;
         float size = Mathf.Lerp(cam.orthographicSize, project(vel), Time.deltaTime * lerpSpeed);
-        Vector3 camPos = new Vector3 (playerPos.x, playerPos.y, -7.0f);
+        Vector3 camPos = new Vector3 (playerPos.x, playerPos.y, -700.0f);
 
         cam.orthographicSize = size;
         transform.position = camPos;
