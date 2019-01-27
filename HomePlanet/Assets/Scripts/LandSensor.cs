@@ -5,17 +5,20 @@ using UnityEngine;
 public class LandSensor : MonoBehaviour
 {
     private Collider2D cd;
-    private PassengerSeat seat;
+
+    public float raycastMagnitude = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
         cd = GetComponent<Collider2D>();
-        seat = GetComponent<PassengerSeat>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Update from our original script. Currently dead code
+    /*
+    void OldUpdate()
     {
+        PassengerSeat seat = GetComponent<PassengerSeat>();
         Collider2D[] nearby = Physics2D.OverlapCircleAll(transform.position, 8);
         foreach(Collider2D check in nearby){
             if(cd.IsTouching(check)){
@@ -36,5 +39,28 @@ public class LandSensor : MonoBehaviour
                 }
             }
         }
+    }
+    */
+
+    /**
+     * Gets the Collider2D of whatever GameObject is directly below the rocket.
+     * This is intended to be used to detect the planet that we are landing on.
+     */
+    public Planet GetPlanetBelow() {
+       RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up * -1 * raycastMagnitude);
+       if (hit.collider == null) {
+           // Not hovering over anything
+           return null;
+       }
+
+       if (!cd.IsTouching(hit.collider)) {
+           // Hovering over, but not touching
+           return null;
+       }
+
+       GameObject objectUnderneathShip = hit.collider.gameObject;
+       Planet planet = objectUnderneathShip.GetComponent<Planet>();
+       // Returns null if we are hovering over something other than a planet, or the Planet
+       return planet;
     }
 }

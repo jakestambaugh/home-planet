@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5199524739119653360}
   - component: {fileID: 5199524739119653374}
   - component: {fileID: 5199524739119653362}
+  - component: {fileID: 8811130255906539888}
   - component: {fileID: 7824965305768584187}
   m_Layer: 2
   m_Name: Rocket
@@ -82,7 +83,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b93332528a1b45b181185800064a2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 0}
+  raycastMagnitude: 3
+--- !u!114 &8811130255906539888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199524739119653373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b4d204dc0384de2a5c3730ce724382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &7824965305768584187
 PolygonCollider2D:
   m_ObjectHideFlags: 0

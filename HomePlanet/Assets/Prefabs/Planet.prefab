@@ -80,7 +80,8 @@ GameObject:
   - component: {fileID: 33198170438365758}
   - component: {fileID: 23489876264333144}
   - component: {fileID: 58438669526325956}
-  - component: {fileID: 3324975365601952673}
+  - component: {fileID: 8430390655717435687}
+  - component: {fileID: 9062980251207266828}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -165,7 +166,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &3324975365601952673
+--- !u!114 &8430390655717435687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,10 +175,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1894385466075630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ecf84a5fdd04b33b9ce29e0e2c4b70, type: 3}
+  m_Script: {fileID: 11500000, guid: e87977ce72fd7483f9909c6f50b52c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 370865370502414165}
+  helpBubble: {fileID: 370865370502414165}
+--- !u!114 &9062980251207266828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894385466075630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d974540d77a406cb2e30f1844fd883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4728199017810082119
 PrefabInstance:
   m_ObjectHideFlags: 0
