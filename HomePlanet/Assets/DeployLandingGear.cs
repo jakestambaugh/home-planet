@@ -17,11 +17,6 @@ public class DeployLandingGear : MonoBehaviour
         anim = GetComponent<Animator>();
         gameObjects = GameObject.FindGameObjectsWithTag("Planet");
         anim.speed = 0.0f;
-
-        foreach(GameObject plnt in gameObjects)
-        {
-            Debug.Log(plnt);
-        }
     }
 
     // Update is called once per frame

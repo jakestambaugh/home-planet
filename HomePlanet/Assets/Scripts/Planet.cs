@@ -5,14 +5,6 @@ using UnityEngine;
 public class Planet : MonoBehaviour
 {
     public PlanetClues cluesFile;
-    public string[] possibleClues;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        possibleClues = cluesFile.clues;
-        gameObject.tag = "Planet";
-    }
 
     private string DescribePeople() {
         return "cat-like creatures";
@@ -52,7 +44,7 @@ public class Planet : MonoBehaviour
 
         return "" + Intro() + possibleClues[i];
         */
-        int i = Random.Range(0, possibleClues.Length);
-        return possibleClues[i];
+        int i = Random.Range(0, cluesFile.clues.Length);
+        return cluesFile.clues[i];
     }
 }

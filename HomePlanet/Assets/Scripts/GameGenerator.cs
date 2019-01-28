@@ -34,18 +34,17 @@ public class GameGenerator : MonoBehaviour
     }
 
     public void UpdateScore() {
+        clueText.SetText("Thanks for dropping me off!");
         timer.UpdateScore();
     }
 
     public void SetupNewPassenger(){
         Planet startPlanet = GetNextPlanet();
-        Debug.Log("Picked starting planet! " + startPlanet.name);
         // Sets the passenger on the new planet
         PassengerPickupPoint ppp = startPlanet.GetComponent<PassengerPickupPoint>();
         Planet destinationPlanet = GetNextPlanet();
-        Debug.Log("Picked new planet! " + destinationPlanet.name);
         Debug.Assert(startPlanet != destinationPlanet);
-        Debug.Log("Setting up the passenger");
+        clueText.SetText("Find a new passenger!");
         ppp.SetPassenger(destinationPlanet);
     }
 
