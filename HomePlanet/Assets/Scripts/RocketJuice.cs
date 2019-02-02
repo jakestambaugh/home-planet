@@ -13,18 +13,11 @@ public class RocketJuice : MonoBehaviour
     private void Start()
     {
         particles = GetComponentsInChildren<ParticleSystem>();
-        Debug.Log($"AHAHRHAHH SIZE IS {particles.Length}");
     }
 
     private void Update()
     {
         DecreaseRocketAnimation();
-        /* // Test code with this
-        if(tester < 360)
-            tester++;
-        else
-            IncreaseRocketAnimation();
-        */
     }
 
     public void IncreaseRocketAnimation()
