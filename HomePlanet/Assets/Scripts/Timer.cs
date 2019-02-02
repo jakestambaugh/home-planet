@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(HighScore))]
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI clueText;
@@ -11,12 +12,14 @@ public class Timer : MonoBehaviour
     private float startTime;
     private int score;
     private bool hit = false;
+    private HighScore highScore;
     // Start is called before the first frame update
     void Start()
     {
         startTime = Time.time;
         score = 0;
         hit = false;
+        highScore = GetComponent<HighScore>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class Timer : MonoBehaviour
         }
         if ((2 - (int)t / 60) <= 0 && (58 - (t % 60  + 1) <= 0) && hit == false)  {
             hit = true;
+            highScore.SetHighScore(score);
             clueText.SetText("Press P to restart!");
             Time.timeScale = 0f;
         }
