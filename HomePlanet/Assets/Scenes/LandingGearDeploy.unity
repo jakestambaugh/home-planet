@@ -1009,6 +1009,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1288926527, guid: c7886949773d44827897a58d1a618d08, type: 3}
+      propertyPath: timerLength
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7886949773d44827897a58d1a618d08, type: 3}
 --- !u!224 &684074907 stripped
