@@ -18,7 +18,7 @@ public class RocketControls : MonoBehaviour {
 
     public GameObject splosion;
 
-    float maxSpeed = 5.0f;
+    float maxSpeed = 6.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -40,15 +40,15 @@ public class RocketControls : MonoBehaviour {
             boostAudio.Pause();
         }
 
-        if(Input.GetAxis("Horizontal") > .4){
+        if(Input.GetAxis("Horizontal") > .05){
             //this.transform.Rotate(Vector3.right * Time.deltaTime * 10);
             lt.IncreaseRocketAnimation();
-            rb.AddTorque(-torque, ForceMode2D.Force);
+            rb.AddTorque(Input.GetAxis("Horizontal") * -1.25f, ForceMode2D.Force);
         }
-        if(Input.GetAxis("Horizontal") < -.4){
+        if(Input.GetAxis("Horizontal") < -.05){
             //this.transform.Rotate(Vector3.left * Time.deltaTime * 10);
             rt.IncreaseRocketAnimation();
-            rb.AddTorque(torque, ForceMode2D.Force);
+            rb.AddTorque(Input.GetAxis("Horizontal") * -1.25f, ForceMode2D.Force);
         }
 	}
 
