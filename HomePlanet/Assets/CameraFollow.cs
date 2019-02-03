@@ -66,7 +66,13 @@ public class CameraFollow : MonoBehaviour
 
         float size = Mathf.Lerp(cam.orthographicSize, project(vel), Time.deltaTime * lerpSpeed);
 
-        cam.orthographicSize = size+0.02f;
+        cam.orthographicSize = size+0.04f;
+        
+        if(cam.orthographicSize > 22.0f)
+        {
+            cam.orthographicSize = 22.0f;
+        }
+
         transform.position = camPos;
     }
 
