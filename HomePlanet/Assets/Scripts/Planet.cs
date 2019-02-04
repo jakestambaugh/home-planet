@@ -47,4 +47,9 @@ public class Planet : MonoBehaviour
         int i = Random.Range(0, cluesFile.clues.Length);
         return cluesFile.clues[i];
     }
+
+    public GameObject GetObject()
+    {
+        return this.gameObject;
+    }
 }

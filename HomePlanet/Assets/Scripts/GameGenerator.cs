@@ -10,6 +10,8 @@ public class GameGenerator : MonoBehaviour
 
     private Timer timer;
 
+    public GameObject directionalIndicator;
+
     Planet[] planets;
     Queue<Planet> unpicked;
     List<Planet> picked;
@@ -42,10 +44,13 @@ public class GameGenerator : MonoBehaviour
         Planet startPlanet = GetNextPlanet();
         // Sets the passenger on the new planet
         PassengerPickupPoint ppp = startPlanet.GetComponent<PassengerPickupPoint>();
+        DirectionIndicator di = directionalIndicator.GetComponent<DirectionIndicator>();
+
         Planet destinationPlanet = GetNextPlanet();
         Debug.Assert(startPlanet != destinationPlanet);
         clueText.SetText("Find a new passenger!");
         ppp.SetPassenger(destinationPlanet);
+        di.SetCurrentDestination(startPlanet.GetObject());
     }
 
     public Planet GetNextPlanet() {
