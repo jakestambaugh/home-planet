@@ -13,6 +13,8 @@ public class CameraFollow : MonoBehaviour
 
     public float lerpSpeed = 0.8f;
 
+    public bool minimapMode = false;
+
     private Rigidbody2D rocketbody;
 
     public RocketControls rc;
@@ -29,7 +31,8 @@ public class CameraFollow : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         rocketbody = player.GetComponent<Rigidbody2D>();
-        rc = player.GetComponentInChildren<RocketControls>();
+        if(minimapMode == false)
+            rc = player.GetComponentInChildren<RocketControls>();
     }
 
     // Update is called once per frame
@@ -38,16 +41,19 @@ public class CameraFollow : MonoBehaviour
         float vel = Mathf.Clamp(rocketbody.velocity.magnitude, 0f, 100f);
         Vector3 playerPos = player.transform.position;
         
-        if(rc.exploding == true && explosionDelayEnabled == false)
+        Vector3 camPos;
+        if(minimapMode == false)
         {
-            explosionDelayEnabled = true;
-            explosionPos = new Vector3(playerPos.x, playerPos.y);
-            rc.exploding = false;
-            rc.MoveToCenter();
+            if(rc.exploding == true && explosionDelayEnabled == false)
+            {
+                explosionDelayEnabled = true;
+                explosionPos = new Vector3(playerPos.x, playerPos.y);
+                rc.exploding = false;
+                rc.MoveToCenter();
+            }
         }
 
-        Vector3 camPos;
-        if(explosionDelayEnabled == true)
+        if(minimapMode == false && explosionDelayEnabled == true)
         {
             camPos = new Vector3 (explosionPos.x, explosionPos.y, -700.0f);
             delayTime += Time.deltaTime;
@@ -68,9 +74,9 @@ public class CameraFollow : MonoBehaviour
 
         cam.orthographicSize = size+0.04f;
         
-        if(cam.orthographicSize > 22.0f)
+        if(cam.orthographicSize > 52.0f)
         {
-            cam.orthographicSize = 22.0f;
+            cam.orthographicSize = 52.0f;
         }
 
         transform.position = camPos;
