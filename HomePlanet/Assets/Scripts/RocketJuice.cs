@@ -8,8 +8,6 @@ public class RocketJuice : MonoBehaviour
     private const int DECAY_FACTOR = 12;
     private const int GROWTH_FACTOR = DECAY_FACTOR * 2;
 
-    private int tester = 0;
-
     private void Start()
     {
         particles = GetComponentsInChildren<ParticleSystem>();
